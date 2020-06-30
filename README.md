@@ -1,5 +1,5 @@
 # Controlling-2-servo-motors
-<
+
 // Include the Servo library 
 #include <Servo.h> 
 
@@ -11,14 +11,17 @@ int servoPin2 = 6;
 Servo Servo1; 
 Servo Servo2; 
 
-void setup() { 
+void setup() 
+{ 
    // We need to attach the servo to the used pin number 
    Servo1.attach(servoPin1);
    Servo2.attach(servoPin2);
    Servo1.write(0);
    Servo2.write(0);  
 }
-void loop(){ 
+
+void loop()
+{ 
    // Make servo1 goes to 45 degrees and servo2 goes to 30 degrees
    Servo1.write(45);
    Servo2.write(30); 
@@ -34,4 +37,4 @@ void loop(){
    Servo2.write(30);
    delay(2000); 
 }
->
+
