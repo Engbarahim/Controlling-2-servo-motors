@@ -1,5 +1,5 @@
 # Controlling-2-servo-motors
-
+<
 // Include the Servo library 
 #include <Servo.h> 
 
@@ -34,3 +34,4 @@ void loop(){
    Servo2.write(30);
    delay(2000); 
 }
+>
