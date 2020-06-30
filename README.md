@@ -21,9 +21,10 @@ void setup(){
    // We need to attach the servo to the used pin number 
    Servo1.attach(servoPin1);
    Servo2.attach(servoPin2);
+   
+   //Set servo motor to 0 degrees
    Servo1.write(0);
    Servo2.write(0);  
-   
    
 }
 
