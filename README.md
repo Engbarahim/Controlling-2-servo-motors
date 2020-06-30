@@ -1,13 +1,20 @@
 #Controlling-2-servo-motors
 
+// Include the Servo library 
+#include <Servo.h> 
+
+
 
 // Declare the Servo pins 
 int servoPin1 = 7; 
 int servoPin2 = 6; 
 
+
 // Create a servo object 
 Servo Servo1; 
 Servo Servo2; 
+
+
 
 void setup(){
 
@@ -17,7 +24,9 @@ void setup(){
    Servo1.write(0);
    Servo2.write(0);  
    
+   
 }
+
 
 void loop(){ 
 
@@ -35,5 +44,7 @@ void loop(){
    Servo1.write(180); 
    Servo2.write(30);
    delay(2000); 
+   
+   
    
 }
