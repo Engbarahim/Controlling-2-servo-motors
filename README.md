@@ -1,65 +1,41 @@
-# Controlling-2-DC-motors-using-L298N
+#Controlling-2-servo-motors
 
-//L293D
+// Include the Servo library 
+#include <Servo.h> 
 
-//Motor A
-const int motorPin1  = 7;  // IN1 of L293
-const int motorPin2  = 6;  // IN2 10 of L293
+// Declare the Servo pins 
+int servoPin1 = 7; 
+int servoPin2 = 6; 
 
-//Motor B
-const int motorPin3  = 5; // IN3 of L293
-const int motorPin4  = 4;  // IN4 of L293
-
+// Create a servo object 
+Servo Servo1; 
+Servo Servo2; 
 
 void setup(){
- 
-    //Set pins as outputs
-    pinMode(motorPin1, OUTPUT);
-    pinMode(motorPin2, OUTPUT);
-    pinMode(motorPin3, OUTPUT);
-    pinMode(motorPin4, OUTPUT);
-      
+
+   // We need to attach the servo to the used pin number 
+   Servo1.attach(servoPin1);
+   Servo2.attach(servoPin2);
+   Servo1.write(0);
+   Servo2.write(0);  
+   
 }
 
+void loop(){ 
 
-void loop(){
-
-   //Motor Control - Motor A: motorPin1,motorpin2 & Motor B: motorpin3,motorpin4
-
-    //This code  will turn Motor A clockwise for 2 sec.
-    analogWrite(motorPin1, 180);
-    analogWrite(motorPin2, 0);
-    analogWrite(motorPin3, 180);
-    analogWrite(motorPin4, 0);
-    delay(2000); 
-    
-    //This code will turn Motor A counter-clockwise for 2 sec.
-    analogWrite(motorPin1, 0);
-    analogWrite(motorPin2, 180);
-    analogWrite(motorPin3, 0);
-    analogWrite(motorPin4, 180);
-    delay(2000);
-    
-    //This code will turn Motor B clockwise for 2 sec.
-    analogWrite(motorPin1, 0);
-    analogWrite(motorPin2, 180);
-    analogWrite(motorPin3, 180);
-    analogWrite(motorPin4, 0);
-    delay(2000); 
-    
-    //This code will turn Motor B counter-clockwise for 2 sec.
-    analogWrite(motorPin1, 180);
-    analogWrite(motorPin2, 0);
-    analogWrite(motorPin3, 0);
-    analogWrite(motorPin4, 180);
-    delay(2000);    
-    
-    //And this code will stop motors for 10 sec.
-    analogWrite(motorPin1, 0);
-    analogWrite(motorPin2, 0);
-    analogWrite(motorPin3, 0);
-    analogWrite(motorPin4, 0);
-    delay(10000)
-  
-
+   // Make servo1 goes to 45 degrees and servo2 goes to 30 degrees
+   Servo1.write(45);
+   Servo2.write(30); 
+   delay(2000); 
+   
+   // Make servo1 go to 90 degrees and servo2 goes to 60 degrees
+   Servo1.write(90);
+   Servo2.write(60); 
+   delay(2000); 
+   
+   // Make servo1 go to 180 degrees and return servo2 to 30 degrees
+   Servo1.write(180); 
+   Servo2.write(30);
+   delay(2000); 
+   
 }
