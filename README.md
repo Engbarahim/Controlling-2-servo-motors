@@ -1,7 +1,5 @@
 #Controlling-2-servo-motors
 
-// Include the Servo library 
-#include <Servo.h> 
 
 // Declare the Servo pins 
 int servoPin1 = 7; 
